@@ -1,0 +1,25 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/bootstrap/bootstrap.css')
+    link(rel='stylesheet', href='/stylesheets/bootstrap/bootstrap-theme.css')
+    link(rel='stylesheet', href='/stylesheets/index.css') 
+  body(data-message="#{message}")  
+    form#loginForm(action="/login", method="POST")
+      div.input-group
+        div.input-group-addon
+          span.glyphicon.glyphicon-user
+        input#username.form-control(name="username", type="text", placeholder="用户名")
+      div.input-group
+        div.input-group-addon
+          span.glyphicon.glyphicon-star
+        input#password.form-control(name="password", type="password", placeholder="密码")
+      div.submit
+        button#submit(name="submit", type="submit")
+          span.glyphicon.glyphicon-arrow-right
+      div.hanger
+        img(src='/images/hanger1.png')
+        button#register(type="button", onclick="location.href='/register'") 注册
+    script(src='/javascripts/jquery-1.11.1.min.js')
+    script(src='/javascripts/common.js')

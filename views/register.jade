@@ -1,0 +1,38 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/bootstrap/bootstrap.css')
+    link(rel='stylesheet', href='/stylesheets/bootstrap/bootstrap-theme.css')
+    link(rel='stylesheet', href='/stylesheets/register.css')
+  body(data-message="#{message}")
+    form#registerForm(action="/registerUser", method="POST")
+      div.input-group
+        div.input-group-addon
+          span.glyphicon.glyphicon-user
+        input#username.form-control(name="username", type="text", placeholder="用户名")
+      div.input-group
+        div.input-group-addon
+          span.glyphicon.glyphicon-star
+        input#password.form-control(name="password", type="password", placeholder="密码")
+      div.input-group
+        div.input-group-addon
+          span.glyphicon.glyphicon-star-empty
+        input#repassword.form-control(name="repassword", type="password", placeholder="确认密码")
+      div.input-group.icon
+        div.input-group-addon
+          span.glyphicon.glyphicon-picture
+        input#iconMock.form-control(name="iconMock", type="text", placeholder="≪ 选择头像", disabled)
+        input#icon.form-control.hidden(name="icon")
+      div.submit
+        button#submit(name="submit", type="submit")
+          span.glyphicon.glyphicon-arrow-right
+      div.hanger
+        img(src='/images/hanger1.png')
+        button#back(type="button", onclick="location.href='/'") 后退
+    form#imageForm(action="uploadIcon", method="post", target="uploadFrame", enctype="multipart/form-data")
+      input.hidden#uploadButton(name="image", type="file")
+    iframe#uploadFrame.hidden(name="uploadFrame")
+    script(src='/javascripts/jquery-1.11.1.min.js')
+    script(src='/javascripts/common.js')
+    script(src='/javascripts/register.js')

@@ -1,0 +1,44 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/bootstrap/bootstrap.css')
+    link(rel='stylesheet', href='/stylesheets/bootstrap/bootstrap-theme.css')
+    link(rel='stylesheet', href='/stylesheets/chat.css')
+  body
+    div.container
+      div.row
+        div.col-md-3.left-col
+          header
+            img.icon
+            span.username
+          section
+            ul.user-list.list-unstyled
+        div.col-md-8.right-col
+          header
+            span.username= title
+          section
+            ul.message-list.list-unstyled 选择左边人物头像，进行聊天
+          footer
+            div#emotionCollection(role="tabpanel")
+              ul.nav.nav-tabs(role="tablist")
+              div.tab-content
+            button#emotion.btn.btn-default 表情
+            div#uploadImage
+              form#imageForm(action="upload", method="post", target="uploadFrame", enctype="multipart/form-data")
+                button.btn.btn-default#mockUpload(type="button") 图片
+                input.hidden#uploadButton(name="image", type="file")
+            span.inputWrap
+              div#inputBox.form-control(contenteditable="true")
+              span.placeholder 请在这里输入信息。。。
+            button#sendButton.btn.btn-primary 发送
+    iframe#uploadFrame.hidden(name="uploadFrame")
+    div#preview
+    script(src='/javascripts/jquery-1.11.1.min.js')
+    script(src='/javascripts/bootstrap/bootstrap.js')
+    script(src='/javascripts/backbone/underscore.js')
+    script(src='/javascripts/backbone/backbone.js')
+    script(src='/javascripts/socket.io-1.3.2.js')
+    script(src='/javascripts/common.js')
+    script(src='/javascripts/io.js')
+    script(src='/javascripts/chat.js')

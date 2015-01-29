@@ -1,0 +1,255 @@
+@charset "utf-8";
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background-color: rgb(66, 69, 76);
+}
+
+.container {
+  margin: 0 auto;
+  height: 90%;
+  padding-top: 50px;
+}
+
+.row {
+  height: 100%;
+}
+
+.left-col,
+.right-col {
+  height: 100%;
+  background-color: rgb(246, 246, 246);
+}
+
+.right-col {
+  margin-left: 20px;
+}
+
+header {
+  background: #5B6769;
+  background: -moz-linear-gradient(top, #687683, #5B6769);
+  background: -webkit-gradient(linear, 0 0, 0 100%, from(#687683), to(#5b6769));
+  height: 35px;
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+header .username {
+  color: white;
+  line-height: 35px;
+}
+
+.left-col header .username {
+  float: left;
+  margin-left: 75px;
+}
+
+header .icon {
+  float: left;
+  position: absolute;
+  top: -20px;
+  left: 0px;
+  border-radius: 50%;
+  margin-left: 10px;
+  width: 50px;
+  height: 50px;
+}
+
+.user-list {
+  padding: 0;
+}
+
+.user {
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 4px;
+  position: relative;
+}
+
+.user.current,
+.user:hover {
+  background-color: #D1D4D9;
+}
+
+.user .username {
+  margin-left: 10px;
+}
+
+.user .icon {
+  width: 40px;
+  height: 40px;
+}
+
+.right-col section {
+  margin-top: 5px;
+  height: 83px;
+}
+
+.message-list {
+  height: 100%;
+  overflow-y: auto;
+}
+
+.message {
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.message>.icon {
+  width: 40px;
+  height: 40px;
+}
+
+.message.receive {
+  text-align: left;
+}
+
+.message.send {
+  text-align: right;
+}
+
+.message.receive>.icon{
+  float: left;
+}
+
+.message.send>.icon {
+  float: right;
+}
+
+.message .text {
+  display: inline-block;
+  min-height: 40px;
+  max-width: 250px;
+  position: relative;
+  padding: 8px 7px;
+  word-break: break-all;
+  border-radius: 4px;
+  background: #CADDA5;
+}
+
+.receive .text {
+  margin-left: 40px;
+}
+
+.send .text {
+  margin-right: 40px;
+}
+
+.message .text:after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  position: absolute;
+  top: 4px;
+}
+
+.send .text:after {
+  border-left: 20px solid #CADDA5;
+  right: -19px;
+}
+
+.receive .text:after {
+  border-right: 20px solid #CADDA5;
+  left: -19px;
+}
+
+.message .text img {
+  max-width: 240px;
+}
+
+.right-col footer {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  text-align: right;
+  padding-bottom: 5px;
+  padding-right: 10px;
+  z-index: 2;
+}
+
+#inputBox {
+  text-align: left;
+  width: 450px;
+  height: 34px;
+  display: inline-block;
+  resize: none;
+  overflow-y: auto;
+  vertical-align: bottom;
+}
+
+#inputBox:focus {
+  height: 150px;
+}
+
+.placeholder {
+  position: absolute;
+  color: #ccc;
+  left: 0;
+  top: 1px;
+  width: 100%;
+  text-align: left;
+  padding-left: 20px;
+}
+
+#uploadImage {
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.popMessage {
+  display: inline-block;
+  position: absolute;
+  background-color: #cadda5;
+  padding: 5px;
+  right: 0px;
+  max-width: 100px;
+  word-wrap: break-word;
+  top: 10px;
+  border-radius: 5px;
+}
+
+.popMessage:after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  position: absolute;
+  top: 10px;
+  border-right: 12px solid #CADDA5;
+  left: -11px;
+}
+
+.inputWrap {
+  position: relative;
+}
+
+#emotionCollection {
+  background-color: rgb(246, 246, 246);
+}
+
+#emotionCollection .icon {
+  border: 1px transparent solid;
+  width: 20px;
+}
+
+#emotionCollection .icon:hover {
+  border: 1px blue solid;
+}
+
+#preview {
+  display: none;
+  position: absolute;
+  z-index: 1000;
+  background-color: rgb(246, 246, 246);
+}
+
+#preview img {
+  height: 100px;
+}
