@@ -7,7 +7,9 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var id = 1000;
 
-var url = 'mongodb://localhost:3001/chat';
+var url = 'mongodb://clarkfbar:1234@ds053380.mongolab.com:53380/chat';
+//var url = 'mongodb://q0B2R6Ai:T5OUd08880e9@mongo-2-2.jae.jd.com:27017/chat';
+//var url = 'mongodb://localhost:3001/chat';
 
 mongoose.connect(url, function(err, db) {
   if(!err) {

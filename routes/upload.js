@@ -25,7 +25,7 @@ exports.upload = function(req, res){
 
 exports.uploadIcon = function(req, res){
   var form = new formidable.IncomingForm(); 
-  form.uploadDir = "./public/images/upload";
+  form.uploadDir = "./public/images/icon";
   form.keepExtensions = true;
   form.encoding = 'utf-8';
   form.parse(req, function(error,fields,files){
